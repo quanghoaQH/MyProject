@@ -1,0 +1,158 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:jsf="http://xmlns.jcp.org/jsf"
+	xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+<ui:composition template="/resources/admin/template/admin_post_template.xhtml">
+	<ui:define name="header">
+	    <!-- Add your header here or delete to use the default -->
+	</ui:define>
+	
+	<ui:define name="content">
+		<div class="container-fluid">
+		  <div class="row content">
+		    
+		    <ui:define name="leftContent">
+		    
+		    </ui:define>
+		    
+		    <div class="col-sm-9">
+		      	<h4><small>RECENT POSTS</small></h4>
+				<div class="row">
+				            
+                <div class="col-sm-9">
+
+                    <div class="panel-group">
+                        <div class="panel panel-info">
+
+                            <div class="panel-heading">List new post
+                            </div>
+                            <h:form id="listF1">  
+
+                                <h:outputText escape="false" value="#{msg.ListCustomerEmpty}" rendered="#{listNewsPostController.dtmdl.rowCount == 0}"/>
+                                <h:panelGroup rendered="#{listNewsPostController.dtmdl.rowCount > 0}"> &#xA0; &#xA0;
+                                    <h:outputText   value="#{listNewsPostController.pagination.pageFirstItem + 1}..#{listNewsPostController.pagination.pageLastItem + 1}/#{listNewsPostController.pagination.itemsCount}"/>&nbsp;
+                                    <h:commandLink action="#{listNewsPostController.previous}" value="#{msg.Previous} #{listNewsPostController.pagination.pageSize}" rendered="#{listNewsPostController.pagination.hasPreviousPage}"/>&nbsp;
+                                    <h:commandLink action="#{listNewsPostController.next}" value="#{msg.Next} #{listNewsPostController.pagination.pageSize}" rendered="#{listNewsPostController.pagination.hasNextPage}"/>&nbsp;
+                                    <h:dataTable value="#{listNewsPostController.dtmdl}" var="item"  class="table table-responsive table-bordered table-striped"
+                                                 >
+                                        <h:column>
+                                            <f:facet name="header">#{msg.column_post_id}</f:facet>
+                                                #{item.postId}
+                                        </h:column>
+                                         <h:column>
+                                            <f:facet name="header">#{msg.column_post_title}</f:facet>
+                                                #{item.postTitle}
+                                        </h:column>
+                                        <h:column>
+                                            <f:facet name="header">#{msg.column_post_description}</f:facet>
+                                                #{item.postDescription}
+                                        </h:column>
+                                        <h:column>
+                                            <f:facet name="header">#{msg.column_post_content}</f:facet>
+                                                #{item.postContent}
+                                        </h:column>
+                                        <h:column>
+                                            <f:facet name="header">#{msg.column_post_status}</f:facet>
+                                                #{item.postStatus}
+                                        </h:column>
+                                        <h:column>
+                                            <f:facet name="header">#{msg.button_edit}</f:facet>
+                                                <h:commandLink action="#{editNewsPostController.editAction(item.postId)}" >                                               <!-- <h:commandLink action="edit_post" > -->
+													<i class="glyphicon glyphicon-edit"></i>
+												</h:commandLink>
+                                        </h:column>
+                                        <h:column>
+                                            <f:facet name="header">#{msg.button_delete}</f:facet>
+                                                <!-- <h:commandButton id="btnDelete">
+                                                	<i class="glyphicon glyphicon-trash"></i>
+                                                </h:commandButton> -->
+                                        		<h:commandLink onclick="return confirm('Are you sure?');" 
+                                        			action="#{listNewsPostController.deleteAction(item.postId)}">
+													<i class="glyphicon glyphicon-trash"></i>
+												</h:commandLink>
+												<!-- <a href="#" id="btnDelete" class="confirm-delete btn mini red-stripe">
+														<i class="glyphicon glyphicon-trash"></i>
+												</a> -->
+												
+                                        </h:column>
+                                    </h:dataTable>
+                                </h:panelGroup>
+                                <div class="container-fluid">
+                                    <div class="col-xs-12">
+
+                                        <button   class="btn btn-default btn-sm" jsf:action="#{listNewsPostController.firstPage()}"
+                                                  jsf:disabled="#{listNewsPostController.pagination.currentPage eq 0}">
+                                            <span class="glyphicon glyphicon-step-backward"></span>
+                                        </button>
+                                        <button   class="btn btn-default btn-sm" jsf:action="#{listNewsPostController.previous}"
+                                                  jsf:disabled="#{not listNewsPostController.pagination.hasPreviousPage}">
+                                            <span class="glyphicon glyphicon-backward"></span>
+                                        </button>
+                                        &#xA0;
+                                        <span class="text-primary">#{listNewsPostController.pagination.currentPage+1}</span>
+                                        &#xA0;
+                                        <button  class="btn btn-default btn-sm" jsf:disabled="#{not listNewsPostController.pagination.hasNextPage}"
+                                                 jsf:action="#{listNewsPostController.next()}" >
+                                            <span class="glyphicon glyphicon-forward"></span>
+                                        </button>
+
+                                        <button   class="btn btn-default btn-sm" jsf:action="#{listNewsPostController.lastPage()}"
+                                                  jsf:disabled="#{listNewsPostController.pagination.currentPage eq listNewsPostController.pagination.finalPage}">
+                                            <span class="glyphicon glyphicon-step-forward"></span>
+                                        </button>
+                                        &#xA0;
+
+                                        <h:selectOneMenu  class=" btn"   value="#{listNewsPostController.pageSize}">
+                                            <f:selectItems  value="#{listNewsPostController.page}" var="pg"
+                                                            itemLabel="#{pg}"
+                                                            itemValue="#{pg}"/>
+                                            <f:ajax listener="#{listNewsPostController.recreatePageSize}" render="listF1"/>
+                                        </h:selectOneMenu>
+                                    </div>   
+
+                                </div>
+                                <p/>
+                            </h:form>
+                        </div>
+
+                    </div>
+               	
+               	</div>
+
+				
+            	</div>
+				<div id="confirmDelete" class="modal fade" tabindex="-1"
+					role="dialog" aria-labelledby="confirmDeleteLabel"
+					aria-hidden="true"
+					style="position: fixed; top: 10%; left: 50%; z-index: 1050; width: 560px; height: 200px; margin-left: -280px; border: 1px solid rgba(0, 0, 0, 0.298039); border-radius: 6px; box-shadow: rgba(0, 0, 0, 0.298039) 0px 3px 7px; -webkit-background-clip: padding-box; outline: none; display: block; background-color: rgb(255, 255, 255); background-clip: padding-box;">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"
+							aria-hidden="true"></button>
+						<h3 id="confirmDeleteLabel">#{msg.button_delete}</h3>
+					</div>
+					<div class="modal-body">
+						<p></p>
+					</div>
+					<div class="modal-footer">
+						<button class="btn" data-dismiss="modal" aria-hidden="true">#{msg.button_Close}</button>
+						<button data-dismiss="modal" class="btn red" id="btnYes">#{msg.button_Confirm}</button>
+					</div>
+				</div>
+		    </div>
+		    <!-- end col-sm-9 -->
+		  </div>
+		</div>
+		<script>
+			var msgDelete = "Do you want delete record ?";
+		</script>
+	</ui:define>
+	<ui:define name="footer">
+	    <!-- Add your footer here or delete to use the default -->
+	</ui:define>
+</ui:composition>
+</html>

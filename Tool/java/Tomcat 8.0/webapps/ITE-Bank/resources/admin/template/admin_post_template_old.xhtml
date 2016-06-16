@@ -1,0 +1,218 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://xmlns.jcp.org/jsf/core">
+<h:head>
+	<title><ui:insert name="title"></ui:insert></title>
+	<link href="#{request.contextPath}/resources/common/css/bootstrap-responsive.css"
+		rel="stylesheet" type="text/css" />
+	<link href="#{request.contextPath}/resources/common/css/bootstrap-responsive.min.css"
+		rel="stylesheet" type="text/css" />
+	<link href="#{request.contextPath}/resources/common/css/bootstrap.css"
+		rel="stylesheet" type="text/css" />
+	<link href="#{request.contextPath}/resources/common/css/bootstrap.min.css"
+		rel="stylesheet" type="text/css" />
+	
+	<!-- Sử dụng boot trap cho bảng dữ liệu -->
+	<!-- Bootstrap Core CSS -->
+    <link href="#{request.contextPath}/resources/admin/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+
+    <!-- MetisMenu CSS -->
+    <link href="#{request.contextPath}/resources/admin/css/metisMenu.min.css" rel="stylesheet" type="text/css"/>
+
+    <!-- DataTables CSS -->
+    <link href="#{request.contextPath}/resources/admin/css/dataTables.bootstrap.css" rel="stylesheet" type="text/css"/>
+
+    <!-- DataTables Responsive CSS -->
+    <link href="#{request.contextPath}/resources/admin/css/dataTables.responsive.css" rel="stylesheet" type="text/css"/>
+
+    <!-- Custom CSS -->
+    <link href="./SB Admin 2 - Bootstrap Admin Theme_files/sb-admin-2.css" rel="stylesheet" type="text/css" />
+
+    <!-- Custom Fonts -->
+    <link href="#{request.contextPath}/resources/admin/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+    
+    <!-- Custom table -->
+    <link href="#{request.contextPath}/resources/admin/css/sb-admin-2.css" rel="stylesheet" type="text/css"/>
+    
+	<!-- end boot trap -->
+	<h:outputScript library="javax.faces" name="jsf.js" />
+	<script type="text/javascript"
+		src="#{request.contextPath}/resources/common/js/jquery-1.10.2.min.js"></script>
+		
+	<!-- jQuery -->
+    <script src="#{request.contextPath}/resources/admin/js/jquery.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="#{request.contextPath}/resources/admin/js/bootstrap.min.js"></script>
+
+    <!-- Metis Menu Plugin JavaScript -->
+    <script src="#{request.contextPath}/resources/admin/js/metisMenu.min.js"></script>
+
+    <!-- DataTables JavaScript -->
+    <script src="#{request.contextPath}/resources/admin/js/jquery.dataTables.min.js"></script>
+    <script src="#{request.contextPath}/resources/admin/js/dataTables.bootstrap.min.js"></script>
+
+    <!-- Custom Theme JavaScript -->
+    <script src="#{request.contextPath}/resources/admin/js/sb-admin-2.js"></script>
+
+    <!-- Page-Level Demo Scripts - Tables - Use for reference -->
+    <script>
+    $(document).ready(function() {
+        $('#dataTables-example').DataTable({
+                responsive: true
+        });
+    });
+    </script>
+
+
+	<script type="text/javascript">
+		jsf.ajax.addOnEvent(function(data) {
+			var ajaxstatus = data.status; // Can be "begin", "complete" and "success"
+			var ajaxloader = document.getElementById("ajaxloader");
+
+			switch (ajaxstatus) {
+			case "begin": // This is called right before ajax request is been sent.
+				ajaxloader.style.display = 'block';
+				break;
+
+			case "complete": // This is called right after ajax response is received.
+				ajaxloader.style.display = 'none';
+				break;
+
+			case "success": // This is called when ajax response is successfully processed.
+				// NOOP.
+				break;
+			}
+		});
+	</script>
+</h:head>
+<body>
+
+    <div id="wrapper">
+
+        <!-- Navigation -->
+        <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="file:///E:/Source_web/startbootstrap-sb-admin-2-1.0.8/pages/index.html">SB Admin v2.0</a>
+            </div>
+            <!-- /.navbar-header -->
+
+
+
+            <div class="navbar-default sidebar" role="navigation">
+                <div class="sidebar-nav navbar-collapse">
+                    <ul class="nav in" id="side-menu">
+                        <li>
+                            <a href="file:///E:/Source_web/startbootstrap-sb-admin-2-1.0.8/pages/index.html"><i class="fa fa-dashboard fa-fw"></i> Lists new post</a>
+                        	
+                        </li>
+                        <li>
+                            <a href="file:///E:/Source_web/startbootstrap-sb-admin-2-1.0.8/pages/tables.html#"><i class="fa fa-bar-chart-o fa-fw"></i> Charts<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level collapse">
+                                <li>
+                                    <a href="file:///E:/Source_web/startbootstrap-sb-admin-2-1.0.8/pages/flot.html">Flot Charts</a>
+                                </li>
+                                <li>
+                                    <a href="file:///E:/Source_web/startbootstrap-sb-admin-2-1.0.8/pages/morris.html">Morris.js Charts</a>
+                                </li>
+                            </ul>
+                            <!-- /.nav-second-level -->
+                        </li>
+                        <li>
+                            <a href="file:///E:/Source_web/startbootstrap-sb-admin-2-1.0.8/pages/tables.html" class="active"><i class="fa fa-table fa-fw"></i> Tables</a>
+                        </li>
+                        <li>
+                            <a href="file:///E:/Source_web/startbootstrap-sb-admin-2-1.0.8/pages/forms.html"><i class="fa fa-edit fa-fw"></i> Forms</a>
+                        </li>
+                        <li>
+                            <a href="file:///E:/Source_web/startbootstrap-sb-admin-2-1.0.8/pages/tables.html#"><i class="fa fa-wrench fa-fw"></i> UI Elements<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level collapse">
+                                <li>
+                                    <a href="file:///E:/Source_web/startbootstrap-sb-admin-2-1.0.8/pages/panels-wells.html">Panels and Wells</a>
+                                </li>
+                                <li>
+                                    <a href="file:///E:/Source_web/startbootstrap-sb-admin-2-1.0.8/pages/buttons.html">Buttons</a>
+                                </li>
+                                <li>
+                                    <a href="file:///E:/Source_web/startbootstrap-sb-admin-2-1.0.8/pages/notifications.html">Notifications</a>
+                                </li>
+                                <li>
+                                    <a href="file:///E:/Source_web/startbootstrap-sb-admin-2-1.0.8/pages/typography.html">Typography</a>
+                                </li>
+                                <li>
+                                    <a href="file:///E:/Source_web/startbootstrap-sb-admin-2-1.0.8/pages/icons.html"> Icons</a>
+                                </li>
+                                <li>
+                                    <a href="file:///E:/Source_web/startbootstrap-sb-admin-2-1.0.8/pages/grid.html">Grid</a>
+                                </li>
+                            </ul>
+                            <!-- /.nav-second-level -->
+                        </li>
+                        <li>
+                            <a href="file:///E:/Source_web/startbootstrap-sb-admin-2-1.0.8/pages/tables.html#"><i class="fa fa-sitemap fa-fw"></i> Multi-Level Dropdown<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level collapse">
+                                <li>
+                                    <a href="file:///E:/Source_web/startbootstrap-sb-admin-2-1.0.8/pages/tables.html#">Second Level Item</a>
+                                </li>
+                                <li>
+                                    <a href="file:///E:/Source_web/startbootstrap-sb-admin-2-1.0.8/pages/tables.html#">Second Level Item</a>
+                                </li>
+                                <li>
+                                    <a href="file:///E:/Source_web/startbootstrap-sb-admin-2-1.0.8/pages/tables.html#">Third Level <span class="fa arrow"></span></a>
+                                    <ul class="nav nav-third-level collapse">
+                                        <li>
+                                            <a href="file:///E:/Source_web/startbootstrap-sb-admin-2-1.0.8/pages/tables.html#">Third Level Item</a>
+                                        </li>
+                                        <li>
+                                            <a href="file:///E:/Source_web/startbootstrap-sb-admin-2-1.0.8/pages/tables.html#">Third Level Item</a>
+                                        </li>
+                                        <li>
+                                            <a href="file:///E:/Source_web/startbootstrap-sb-admin-2-1.0.8/pages/tables.html#">Third Level Item</a>
+                                        </li>
+                                        <li>
+                                            <a href="file:///E:/Source_web/startbootstrap-sb-admin-2-1.0.8/pages/tables.html#">Third Level Item</a>
+                                        </li>
+                                    </ul>
+                                    <!-- /.nav-third-level -->
+                                </li>
+                            </ul>
+                            <!-- /.nav-second-level -->
+                        </li>
+                        <li>
+                            <a href="file:///E:/Source_web/startbootstrap-sb-admin-2-1.0.8/pages/tables.html#"><i class="fa fa-files-o fa-fw"></i> Sample Pages<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level collapse">
+                                <li>
+                                    <a href="file:///E:/Source_web/startbootstrap-sb-admin-2-1.0.8/pages/blank.html">Blank Page</a>
+                                </li>
+                                <li>
+                                    <a href="file:///E:/Source_web/startbootstrap-sb-admin-2-1.0.8/pages/login.html">Login Page</a>
+                                </li>
+                            </ul>
+                            <!-- /.nav-second-level -->
+                        </li>
+                    </ul>
+                </div>
+                <!-- /.sidebar-collapse -->
+            </div>
+            <!-- /.navbar-static-side -->
+        </nav>
+	
+		<ui:insert name="content"></ui:insert>
+		
+    </div>
+    <!-- /#wrapper -->
+
+	<img src="#{request.contextPath}/resources/user/img/ajax-loader.gif"
+		id="ajaxloader"
+		style="position: absolute; margin: auto; left: 0; right: 0; top: 0; bottom: 0; display: none;" />
+</body>
+</html>

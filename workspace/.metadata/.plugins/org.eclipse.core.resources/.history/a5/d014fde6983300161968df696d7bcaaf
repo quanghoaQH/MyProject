@@ -1,0 +1,90 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:f="http://xmlns.jcp.org/jsf/core">
+<h:head>
+
+	<link rel="stylesheet"
+		href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
+	<script
+		src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+	<script
+		src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+</h:head>
+
+<h:body>
+	<div id="content">
+		<div class="container">
+			<h4>Modal Example</h4>
+
+
+			<!--  using button html -->
+			<button type="button" class="btn btn-info btn-lg" data-toggle="modal"
+				data-target="#myModal">Open Modal</button>
+
+
+			<!-- using jsf with boostrap -->
+			<h:form id="myForm">
+				<h:commandLink value="Show modal jsf"
+					styleClass="btn btn-info btn-lg"
+					action="#{questionController.testDialogJSF}"
+					onclick="$('#myModal').modal('show');" immediate="true">
+					<f:ajax execute="@this" render=":myForm" />
+				</h:commandLink>
+				<hr />
+
+
+				<!-- using primefaces with boostrap -->
+				<p:commandLink value="Show modal primefaces"
+					styleClass="btn btn-primary"
+					action="#{questionController.testDialogPrimefaces}"
+					oncomplete="$('#myModal').modal('show');" update=":myForm"
+					immediate="true" />
+			</h:form>
+
+
+
+
+
+
+			<!-- Modal -->
+			<div class="modal fade" id="myModal" role="dialog">
+				<div class="modal-dialog">
+					<!-- Modal content-->
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal">&times;</button>
+							<h4 class="modal-title">Modal Header</h4>
+						</div>
+
+						<div class="modal-body">
+							<!-- vùng dữ liệu cần xử lý -->
+							<h:form enctype="multipart/form-data" id="formAnswer"
+								rendered="true">
+								<div class="form-group">
+									<label>Add anwser</label>
+									<h:inputTextarea styleClass="form-control" rows="3" id="anwser" />
+								</div>
+								<h:commandButton styleClass="btn btn-default" value="Add anwser">
+								</h:commandButton>
+							</h:form>
+						</div>
+
+						<div class="modal-footer">
+							<button type="button" class="btn btn-default"
+								data-dismiss="modal">Close</button>
+						</div>
+					</div>
+				</div>
+			</div>
+
+
+		</div>
+	</div>
+</h:body>
+
+</html>

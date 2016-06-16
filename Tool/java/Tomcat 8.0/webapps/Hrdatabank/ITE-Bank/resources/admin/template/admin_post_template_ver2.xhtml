@@ -1,0 +1,46 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core">
+<h:head>
+	<title><ui:insert name="title">Default title</ui:insert></title>
+	<h:outputScript library="resources" name="admin/css/util.js" target="head" />
+	<h:outputStylesheet library="resources" name="admin/css/styles.css" target="head" />
+	
+	<link rel="stylesheet" href="#{request.contextPath}/resources/common/css/bootstrap.css" type="text/css"/>
+    <h:outputScript library="common" name="js/jquery-1.10.2.min.js" />
+    <h:outputScript library="common"  name="js/bootstrap.js" />
+	
+</h:head>
+
+<h:body>
+	<ui:debug hotkey="x"
+		rendered="#{initParam['javax.faces.FACELETS_DEVELOPMENT']}" />
+
+	<div class="pageHeading">
+		<ui:insert name="heading">
+        <!-- #{msgs.placesHeading} -->
+      </ui:insert>
+	</div>
+
+	<div class="menuAndContent">
+		<div class="menuLeft">
+			<ui:insert name="menuLeft" />
+		</div>
+
+		<div class="content">
+			<ui:insert name="content" />
+		</div>
+
+		<div class="menuRight">
+			<ui:insert name="menuRight">
+				<!-- <ui:include src="/sections/shared/sourceViewer.xhtml" /> -->
+			</ui:insert>
+		</div>
+	</div>
+
+</h:body>
+
+</html>

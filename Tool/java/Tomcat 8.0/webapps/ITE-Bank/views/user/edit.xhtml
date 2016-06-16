@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
+	xmlns:p="http://primefaces.org/ui">
+
+	<ui:composition template="/resources/admin/template/master_template.xhtml">
+		<h:head>
+			<ui:define name="title">Admin Dashboard</ui:define>
+		</h:head>
+		
+		
+		<ui:define name="content">
+			<div id="page-wrapper">
+				<!-- Page header -->
+				<div class="row">
+					<div class="col-lg-12">
+						<h1 class="page-header">User Update</h1>
+					</div>
+				</div>
+			
+				<!-- Page content -->
+				<div class="row">
+					<div class="col-lg-12">
+						<div class="panel panel-default">
+							<!-- <div class="panel-heading">User Update</div> -->
+							<div class="panel-body">
+								<div class="row">
+									<c:if test="#{userController.editUser ne null}">
+										<h:form id="fEditUser">
+											<div class="col-lg-6">
+												<h:inputHidden id="userId" value="#{userController.editUser.userId}"/>
+												<!-- Email -->
+												<div class="form-group col-lg-9">
+													<p:outputLabel value="Email:"/>
+													<p:outputLabel id="email" value="#{userController.editUser.email}" 
+														styleClass=" form-control form-control-static" disabled="true"/>
+												</div>
+												
+												<!-- Full Name -->
+												<div class="form-group col-lg-9">
+													<p:outputLabel value="Fullname:"/>
+													<p:inputText id="fullname" value="#{userController.editUser.fullname}" 
+														styleClass=" form-control"/>
+												</div>
+												
+												
+											</div>
+											<div class="col-lg-6">
+												<!-- DOB -->
+												<div class="form-group col-lg-9">
+													<p:outputLabel value="Date of birth:"/>
+													<p:calendar id="dob" value="#{userController.editUser.dob}" 
+														 pattern="dd/MM/yyyy" mask="true" navigator="true"/>
+												</div>
+												
+												<!-- Sex -->
+												<div class="form-group col-lg-9">
+													<p:outputLabel value="Sex:"/>
+													<h:selectOneMenu id="sltSex" value="#{userController.editUser.sex}"
+														styleClass="form-control">
+														<f:selectItem itemValue="" itemLabel="Select One"/>
+														<f:selectItem itemValue="0" itemLabel="Male"/>
+														<f:selectItem itemValue="1" itemLabel="Female"/>
+														<f:selectItem itemValue="2" itemLabel="Other"/>
+													</h:selectOneMenu>
+												</div>
+												
+												<!-- Tel -->
+												<div class="form-group col-lg-9">
+													<p:outputLabel value="Tel:"/>
+													<p:inputText id="tel" value="#{userController.editUser.tel}"
+														styleClass="form-control" maxlength="15">
+														<!-- <f:validateRegex pattern="/\d/" for="tel"></f:validateRegex> -->
+														<f:convertNumber for="tel" integerOnly="true"
+															 ></f:convertNumber>
+													</p:inputText>
+												</div>
+												
+												<!-- Country -->
+												<div class="form-group col-lg-9">
+													<p:outputLabel value="Country:"/>
+													<p:inputText id="country" value="#{userController.editUser.countryId}"
+														styleClass="form-control"/>
+												</div>
+												
+												<!-- State -->
+												<div class="form-group col-lg-9">
+													<p:outputLabel value="State:"/>
+													<p:inputText id="state" value="#{userController.editUser.stateId}"
+														styleClass="form-control"/>
+												</div>
+											</div>
+											<div class="col-lg-12" style="text-align:center;">
+												<p:commandButton id="btnSave" value="Save" styleClass="btn btn-primary" 
+													type="submit" action="#{userController.updateUser}"/>
+												<p:commandButton id="btnReset" value="Reset" styleClass="btn btn-default"
+													type="reset"/>
+												<p:commandButton id="btnBack" value="Back" styleClass="btn btn-default"
+													type="submit" action="#{userController.back}"/>
+											</div>
+												
+										</h:form>
+									</c:if>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</ui:define>
+	</ui:composition>
+</html>

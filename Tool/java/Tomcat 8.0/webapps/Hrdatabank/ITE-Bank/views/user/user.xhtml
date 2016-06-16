@@ -1,0 +1,76 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:c="http://java.sun.com/jsp/jstl/core">
+<ui:composition
+	template="/resources/user/template/master_template.xhtml">
+	<ui:define name="title">
+		User
+	</ui:define>
+	<ui:define name="content">
+		<div class="row feature container">
+			<h:form id="result">
+
+				<h2>Data table JSF</h2>
+				<h:dataTable value="#{viewUserController.listUser}" var="user"
+					border="1" cellpadding="5" cellspacing="0">
+					<h:column>
+						<f:facet name="header">Id</f:facet>    				
+		     	#{user.userId}
+		   </h:column>
+					<h:column>
+						<f:facet name="header">Username</f:facet>    				
+		     	#{user.fullname}
+		   </h:column>
+					<h:column>
+						<f:facet name="header">Phone</f:facet>    				
+		     	#{user.tel}
+		   </h:column>
+					<h:column>
+						<f:facet name="header">Email</f:facet>    				
+		     	#{user.email}
+		   </h:column>
+					<h:column>
+						<f:facet name="header">Check</f:facet>
+						<h:selectBooleanCheckbox value="#{user.check}">
+							<f:ajax listener="#{viewUserController.changeCheck(user)}"
+								execute="@this"></f:ajax>
+						</h:selectBooleanCheckbox>
+					</h:column>
+					<h:column>
+						<f:facet name="header">Action</f:facet>
+						<h:commandLink value="Edit"
+							actionListener="#{viewUserController.editUser(user)}">
+						</h:commandLink>
+				&nbsp;
+				<h:commandLink value="Delete"
+							actionListener="#{viewUserController.deleteUser(user)}"></h:commandLink>
+					</h:column>
+				</h:dataTable>
+
+				<br />
+				<div class="pagination">
+					<ul>
+						<ui:repeat id="listPage" var="item"
+							value="#{viewUserController.paginations}">
+							<h:panelGroup rendered="#{item.render}">
+								<li><h:commandLink disabled="#{item.disabled}"
+										action="#{viewUserController.searchUser()}">
+										<span class="#{item.style}">#{item.label}</span>
+										<f:setPropertyActionListener
+											target="#{viewUserController.currentPage}"
+											value="#{item.value}"></f:setPropertyActionListener>
+										<f:ajax render=":result"></f:ajax>
+									</h:commandLink></li>
+							</h:panelGroup>
+						</ui:repeat>
+					</ul>
+				</div>
+			</h:form>
+		</div>
+	</ui:define>
+</ui:composition>
+</html>

@@ -1,0 +1,85 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:c="http://java.sun.com/jsp/jstl/core">
+<ui:composition
+	template="/resources/user/template/master_template.xhtml">
+	<ui:define name="title">
+		Login
+	</ui:define>
+	<ui:define name="content">
+
+		<div id="wrapper" class="main-wrapper">
+			<div id="vnw-log-in" class="container">
+				<div class="col-sm-8 col-sm-push-2">
+					<div class="box box-lg">
+						<h:form id="frmLogin">
+							<div style="margin-bottom: 5px">
+								<div style="float: left; width: 30%">
+									#{lang['login.email']}<span class="starRed">*</span>
+								</div>
+								<div style="float: left; width: 70%">
+									<h:inputText id="email" value="#{loginController.email}"
+										required="true"
+										requiredMessage="#{lang['login.email.validate.required']}" />
+								</div>
+								<div class="clearLeft">
+									<span></span>
+								</div>
+							</div>
+
+							<div style="margin-bottom: 5px">
+								<div style="float: left; width: 30%">
+									#{lang['login.password']}<span class="starRed">*</span>
+								</div>
+								<div style="float: left; width: 70%">
+									<h:inputSecret id="password"
+										value="#{loginController.password}" required="true"
+										requiredMessage="#{lang['login.password.validate.required']}" />
+								</div>
+								<div class="clearLeft">
+									<span></span>
+								</div>
+							</div>
+
+							<div style="float: left; width: 30%">&nbsp;</div>
+							<div style="float: left; width: 70%" class="message">
+								<h:messages errorClass="errorClass" infoClass="infoClass">
+								</h:messages>
+								<h:outputLink value="#{request.contextPath}/forgetPass">
+								#{lang['login.fogot.password']}?
+							</h:outputLink>
+							</div>
+							<div class="clearLeft">
+								<span></span>
+							</div>
+							<div style="float: left; width: 30%">&nbsp;</div>
+							<div style="float: left; width: 70%">
+								<h:commandButton id="btnLogin" value="#{lang['login.login']}"
+									actionListener="#{loginController.login()}" />
+							</div>
+							<div class="clearLeft">
+								<span></span>
+							</div>
+							<div style="float: left; width: 30%">&nbsp;</div>
+							<div style="float: left; width: 70%">
+								#{lang['login.not.have.user']}?
+								<h:outputLink value="#{request.contextPath}/register">
+								#{lang['login.register']}
+							</h:outputLink>
+							</div>
+							<div class="clearLeft">
+								<span></span>
+							</div>
+						</h:form>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</ui:define>
+</ui:composition>
+</html>

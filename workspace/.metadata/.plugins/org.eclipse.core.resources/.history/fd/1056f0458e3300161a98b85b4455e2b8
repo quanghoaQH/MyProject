@@ -1,0 +1,46 @@
+@CHARSET "UTF-8";
+body{
+	font-family: Open Sans;
+	background-color: #E6F7FB; 
+}
+a:hover,
+a{
+	text-decoration: none;
+}
+.home{
+	color: #fff !important;
+	font-size: 25px;
+}
+header{
+
+	margin-bottom: 0px !important;
+}
+.logo{
+	padding:10px 0px;
+}
+.navbar-default{
+	margin-bottom: 0px !important;
+	border-radius: 0;
+	background-color: #00ADEF;
+	border:none;
+}
+.navbar-default .navbar-nav > li > a {
+	color: #fff;
+
+}
+.carousel-control:hover, .carousel-control:focus {
+	background-color: none !important;
+}
+.carousel-control.left,
+.carousel-control.right{
+	background: none;
+}
+ hr{
+	border-bottom: thin solid #00ADEF;
+	clear: both;
+}
+.navbar-brand{
+	color: #fff !important;
+}
+
+

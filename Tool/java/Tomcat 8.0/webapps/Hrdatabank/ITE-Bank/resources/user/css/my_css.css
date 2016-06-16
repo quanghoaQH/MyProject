@@ -1,0 +1,52 @@
+@charset "UTF-8";
+
+.header {
+	border: solid 1px gray;
+}
+
+.footer {
+	border: solid 1px gray;
+}
+
+.content {
+	background-color: #fff;
+	border: solid 1px gray;
+}
+
+.error {
+	color: red;
+}
+
+.clearLeft {
+	clear: left;
+}
+
+.clearRight {
+	clear: right;
+}
+
+.clearBoth {
+	clear: both;
+}
+
+div.message ul {
+	list-style: none;
+	padding-left: 0px;
+	margin: 5px 0px;
+}
+
+div.message ul li.errorClass {
+	color: red;
+}
+
+div.message ul li.infoClass {
+	color: #00b9f2;
+}
+
+.starRed {
+	color: red;
+}
+
+.required {
+	color: red;
+}

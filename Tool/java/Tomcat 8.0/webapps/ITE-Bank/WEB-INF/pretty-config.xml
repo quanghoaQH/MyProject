@@ -1,0 +1,46 @@
+<pretty-config xmlns="http://ocpsoft.org/schema/rewrite-config-prettyfaces"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://ocpsoft.org/schema/rewrite-config-prettyfaces
+                      http://ocpsoft.org/xml/ns/prettyfaces/rewrite-config-prettyfaces.xsd">
+
+	<!-- Trang home khi user đăng nhập thành công -->
+	<url-mapping id="home">
+		<pattern value="/home" />
+		<view-id value="/views/user/index.xhtml" />
+	</url-mapping>
+
+	<!-- Trang login user -->
+	<url-mapping id="loginUser">
+		<pattern value="/login" />
+		<view-id value="/views/user/login.xhtml" />
+	</url-mapping>
+
+	<!-- Trang đăng ký user -->
+	<url-mapping id="register">
+		<pattern value="/register" />
+		<view-id value="/views/user/register.xhtml" />
+	</url-mapping>
+
+	<!-- Trang kích hoạt user -->
+	<url-mapping id="active">
+		<pattern value="/active" />
+		<view-id value="/views/user/active.xhtml" />
+		<action>#{activeUserController.activeUser}</action>
+	</url-mapping>
+
+	<url-mapping id="view-user-all">
+		<pattern value="/views/user/" />
+		<view-id value="/views/user/user.xhtml" />
+	</url-mapping>
+
+	<url-mapping id="view-user-edit">
+		<pattern value="/views/user/#{userName}-#{id}.html" />
+		<view-id value="/views/user/user.xhtml" />
+	</url-mapping>
+
+	<url-mapping id="view-user-all">
+		<pattern value="/views/about-me" />
+		<view-id value="/views/user/about.xhtml" />
+	</url-mapping>
+
+</pretty-config>

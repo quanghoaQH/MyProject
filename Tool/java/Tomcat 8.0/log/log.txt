@@ -1,0 +1,170 @@
+01 thg 6 2016 11:02:17,217 {http-nio-8080-exec-8} ERROR itebank.common.dao.AbstractDao  - checkLogin : org.hibernate.QueryException: could not resolve property: email1 of: itebank.common.entity.User [from itebank.common.entity.User as us WHERE (1=1)  AND (us.email1 = :email )  AND (us.password1 = :password ) ]
+2016-06-01 11:33:38 INFO  Version:37 - HCANN000001: Hibernate Commons Annotations {4.0.1.Final}
+2016-06-01 11:33:38 INFO  Version:41 - HHH000412: Hibernate Core {4.0.1.Final}
+2016-06-01 11:33:38 INFO  Environment:239 - HHH000206: hibernate.properties not found
+2016-06-01 11:33:38 INFO  Environment:342 - HHH000021: Bytecode provider name : javassist
+2016-06-01 11:33:38 INFO  Configuration:1920 - HHH000043: Configuring from resource: /hibernate.cfg.xml
+2016-06-01 11:33:38 INFO  Configuration:1939 - HHH000040: Configuration resource: /hibernate.cfg.xml
+2016-06-01 11:33:38 INFO  Configuration:2061 - HHH000041: Configured SessionFactory: null
+2016-06-01 11:33:39 INFO  DriverManagerConnectionProviderImpl:90 - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2016-06-01 11:33:39 INFO  DriverManagerConnectionProviderImpl:110 - HHH000115: Hibernate connection pool size: 20
+2016-06-01 11:33:39 INFO  DriverManagerConnectionProviderImpl:113 - HHH000006: Autocommit mode: true
+2016-06-01 11:33:39 INFO  DriverManagerConnectionProviderImpl:127 - HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://118.70.177.23:3306/ite_bank?autoReconnect=true&useUnicode=true&characterEncoding=utf-8]
+2016-06-01 11:33:39 INFO  DriverManagerConnectionProviderImpl:132 - HHH000046: Connection properties: {user=root, password=****, autocommit=true}
+2016-06-01 11:33:39 INFO  Dialect:121 - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2016-06-01 11:33:39 INFO  TransactionFactoryInitiator:68 - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2016-06-01 11:33:39 INFO  ASTQueryTranslatorFactory:48 - HHH000397: Using ASTQueryTranslatorFactory
+2016-06-01 11:33:39 INFO  SchemaUpdate:182 - HHH000228: Running hbm2ddl schema update
+2016-06-01 11:33:39 INFO  SchemaUpdate:193 - HHH000102: Fetching database metadata
+2016-06-01 11:33:39 INFO  SchemaUpdate:205 - HHH000396: Updating schema
+2016-06-01 11:33:39 INFO  TableMetadata:65 - HHH000261: Table found: ite_bank.action_history
+2016-06-01 11:33:39 INFO  TableMetadata:66 - HHH000037: Columns: [action_id, create_date, action_type, actor_img, action, user_id]
+2016-06-01 11:33:39 INFO  TableMetadata:68 - HHH000108: Foreign keys: []
+2016-06-01 11:33:39 INFO  TableMetadata:69 - HHH000126: Indexes: [action_id, primary]
+2016-06-01 11:33:39 INFO  TableMetadata:65 - HHH000261: Table found: ite_bank.admin
+2016-06-01 11:33:39 INFO  TableMetadata:66 - HHH000037: Columns: [sex, del_flg, tel, country_id, password, state_id, avatar_img, create_date, email, user_update, dob, update_date, random_key, user_create, admin_id, fullname]
+2016-06-01 11:33:39 INFO  TableMetadata:68 - HHH000108: Foreign keys: []
+2016-06-01 11:33:39 INFO  TableMetadata:69 - HHH000126: Indexes: [primary, admin_id]
+2016-06-01 11:33:39 INFO  TableMetadata:65 - HHH000261: Table found: ite_bank.city
+2016-06-01 11:33:39 INFO  TableMetadata:66 - HHH000037: Columns: [id, state_id, city_name, country_id]
+2016-06-01 11:33:39 INFO  TableMetadata:68 - HHH000108: Foreign keys: []
+2016-06-01 11:33:39 INFO  TableMetadata:69 - HHH000126: Indexes: [primary]
+2016-06-01 11:33:39 INFO  TableMetadata:65 - HHH000261: Table found: ite_bank.country
+2016-06-01 11:33:39 INFO  TableMetadata:66 - HHH000037: Columns: [id, country_name]
+2016-06-01 11:33:39 INFO  TableMetadata:68 - HHH000108: Foreign keys: []
+2016-06-01 11:33:39 INFO  TableMetadata:69 - HHH000126: Indexes: [primary]
+2016-06-01 11:33:39 INFO  TableMetadata:65 - HHH000261: Table found: ite_bank.curriculum_vitae
+2016-06-01 11:33:39 INFO  TableMetadata:66 - HHH000037: Columns: [position, skill_id_1, skill_id_2, skill_id_3, skill_id_4, skill_id_5, time_start, skill_id_10, descriptions, time_end, user_id, cv_id, cv_link, job, country, level_skill_9, level_skill_7, certification, level_skill_8, level_skill_5, level_skill_6, level_skill_3, level_skill_10, level_skill_4, level_skill_1, level_skill_2, company, language, skill_id_9, skill_id_8, skill_id_7, work_time, skill_id_6]
+2016-06-01 11:33:39 INFO  TableMetadata:68 - HHH000108: Foreign keys: []
+2016-06-01 11:33:39 INFO  TableMetadata:69 - HHH000126: Indexes: [primary, cv_id]
+2016-06-01 11:33:39 INFO  TableMetadata:65 - HHH000261: Table found: ite_bank.news_post
+2016-06-01 11:33:39 INFO  TableMetadata:66 - HHH000037: Columns: [post_date_update, post_status, post_description, post_author_update, post_date_post, post_id, post_thumb, post_seo_keyword, post_content, post_comment_status, post_category_id, post_seo_description, post_type, post_comment_count, post_author_post, post_title]
+2016-06-01 11:33:39 INFO  TableMetadata:68 - HHH000108: Foreign keys: []
+2016-06-01 11:33:39 INFO  TableMetadata:69 - HHH000126: Indexes: [primary]
+2016-06-01 11:33:39 INFO  TableMetadata:65 - HHH000261: Table found: ite_bank.state
+2016-06-01 11:33:39 INFO  TableMetadata:66 - HHH000037: Columns: [id, country_id, state_name]
+2016-06-01 11:33:39 INFO  TableMetadata:68 - HHH000108: Foreign keys: []
+2016-06-01 11:33:39 INFO  TableMetadata:69 - HHH000126: Indexes: [primary]
+2016-06-01 11:33:39 INFO  TableMetadata:65 - HHH000261: Table found: ite_bank.user
+2016-06-01 11:33:39 INFO  TableMetadata:66 - HHH000037: Columns: [phone, sex, del_flg, status, country_id, tel, active_date, password, city_id, state_id, avatar_img, create_date, token, email, user_update, dob, update_date, random_key, user_create, user_id, fullname]
+2016-06-01 11:33:39 INFO  TableMetadata:68 - HHH000108: Foreign keys: []
+2016-06-01 11:33:39 INFO  TableMetadata:69 - HHH000126: Indexes: [primary, unique_email]
+2016-06-01 11:33:39 INFO  SchemaUpdate:240 - HHH000232: Schema update complete
+2016-06-01 11:33:40 INFO  PrettyFilter:333 - PrettyFilter starting up...
+2016-06-01 11:33:40 INFO  PrettyFilter:339 - PrettyFilter initialized.
+2016-06-01 11:35:33 INFO  Version:37 - HCANN000001: Hibernate Commons Annotations {4.0.1.Final}
+2016-06-01 11:35:33 INFO  Version:41 - HHH000412: Hibernate Core {4.0.1.Final}
+2016-06-01 11:35:33 INFO  Environment:239 - HHH000206: hibernate.properties not found
+2016-06-01 11:35:33 INFO  Environment:342 - HHH000021: Bytecode provider name : javassist
+2016-06-01 11:35:33 INFO  Configuration:1920 - HHH000043: Configuring from resource: /hibernate.cfg.xml
+2016-06-01 11:35:33 INFO  Configuration:1939 - HHH000040: Configuration resource: /hibernate.cfg.xml
+2016-06-01 11:35:33 INFO  Configuration:2061 - HHH000041: Configured SessionFactory: null
+2016-06-01 11:35:33 INFO  DriverManagerConnectionProviderImpl:90 - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2016-06-01 11:35:33 INFO  DriverManagerConnectionProviderImpl:110 - HHH000115: Hibernate connection pool size: 20
+2016-06-01 11:35:33 INFO  DriverManagerConnectionProviderImpl:113 - HHH000006: Autocommit mode: true
+2016-06-01 11:35:33 INFO  DriverManagerConnectionProviderImpl:127 - HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://118.70.177.23:3306/ite_bank?autoReconnect=true&useUnicode=true&characterEncoding=utf-8]
+2016-06-01 11:35:33 INFO  DriverManagerConnectionProviderImpl:132 - HHH000046: Connection properties: {user=root, password=****, autocommit=true}
+2016-06-01 11:35:33 INFO  Dialect:121 - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2016-06-01 11:35:33 INFO  TransactionFactoryInitiator:68 - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2016-06-01 11:35:33 INFO  ASTQueryTranslatorFactory:48 - HHH000397: Using ASTQueryTranslatorFactory
+2016-06-01 11:35:33 INFO  SchemaUpdate:182 - HHH000228: Running hbm2ddl schema update
+2016-06-01 11:35:33 INFO  SchemaUpdate:193 - HHH000102: Fetching database metadata
+2016-06-01 11:35:33 INFO  SchemaUpdate:205 - HHH000396: Updating schema
+2016-06-01 11:35:33 INFO  TableMetadata:65 - HHH000261: Table found: ite_bank.action_history
+2016-06-01 11:35:33 INFO  TableMetadata:66 - HHH000037: Columns: [action_id, create_date, action_type, actor_img, action, user_id]
+2016-06-01 11:35:33 INFO  TableMetadata:68 - HHH000108: Foreign keys: []
+2016-06-01 11:35:33 INFO  TableMetadata:69 - HHH000126: Indexes: [action_id, primary]
+2016-06-01 11:35:33 INFO  TableMetadata:65 - HHH000261: Table found: ite_bank.admin
+2016-06-01 11:35:33 INFO  TableMetadata:66 - HHH000037: Columns: [sex, del_flg, tel, country_id, password, state_id, avatar_img, create_date, email, user_update, dob, update_date, random_key, user_create, admin_id, fullname]
+2016-06-01 11:35:33 INFO  TableMetadata:68 - HHH000108: Foreign keys: []
+2016-06-01 11:35:33 INFO  TableMetadata:69 - HHH000126: Indexes: [primary, admin_id]
+2016-06-01 11:35:34 INFO  TableMetadata:65 - HHH000261: Table found: ite_bank.city
+2016-06-01 11:35:34 INFO  TableMetadata:66 - HHH000037: Columns: [id, state_id, city_name, country_id]
+2016-06-01 11:35:34 INFO  TableMetadata:68 - HHH000108: Foreign keys: []
+2016-06-01 11:35:34 INFO  TableMetadata:69 - HHH000126: Indexes: [primary]
+2016-06-01 11:35:34 INFO  TableMetadata:65 - HHH000261: Table found: ite_bank.country
+2016-06-01 11:35:34 INFO  TableMetadata:66 - HHH000037: Columns: [id, country_name]
+2016-06-01 11:35:34 INFO  TableMetadata:68 - HHH000108: Foreign keys: []
+2016-06-01 11:35:34 INFO  TableMetadata:69 - HHH000126: Indexes: [primary]
+2016-06-01 11:35:34 INFO  TableMetadata:65 - HHH000261: Table found: ite_bank.curriculum_vitae
+2016-06-01 11:35:34 INFO  TableMetadata:66 - HHH000037: Columns: [position, skill_id_1, skill_id_2, skill_id_3, skill_id_4, skill_id_5, time_start, skill_id_10, descriptions, time_end, user_id, cv_id, cv_link, job, country, level_skill_9, level_skill_7, certification, level_skill_8, level_skill_5, level_skill_6, level_skill_3, level_skill_10, level_skill_4, level_skill_1, level_skill_2, company, language, skill_id_9, skill_id_8, skill_id_7, work_time, skill_id_6]
+2016-06-01 11:35:34 INFO  TableMetadata:68 - HHH000108: Foreign keys: []
+2016-06-01 11:35:34 INFO  TableMetadata:69 - HHH000126: Indexes: [primary, cv_id]
+2016-06-01 11:35:34 INFO  TableMetadata:65 - HHH000261: Table found: ite_bank.news_post
+2016-06-01 11:35:34 INFO  TableMetadata:66 - HHH000037: Columns: [post_date_update, post_status, post_description, post_author_update, post_date_post, post_id, post_thumb, post_seo_keyword, post_content, post_comment_status, post_category_id, post_seo_description, post_type, post_comment_count, post_author_post, post_title]
+2016-06-01 11:35:34 INFO  TableMetadata:68 - HHH000108: Foreign keys: []
+2016-06-01 11:35:34 INFO  TableMetadata:69 - HHH000126: Indexes: [primary]
+2016-06-01 11:35:34 INFO  TableMetadata:65 - HHH000261: Table found: ite_bank.state
+2016-06-01 11:35:34 INFO  TableMetadata:66 - HHH000037: Columns: [id, country_id, state_name]
+2016-06-01 11:35:34 INFO  TableMetadata:68 - HHH000108: Foreign keys: []
+2016-06-01 11:35:34 INFO  TableMetadata:69 - HHH000126: Indexes: [primary]
+2016-06-01 11:35:34 INFO  TableMetadata:65 - HHH000261: Table found: ite_bank.user
+2016-06-01 11:35:34 INFO  TableMetadata:66 - HHH000037: Columns: [phone, sex, del_flg, status, country_id, tel, active_date, password, city_id, state_id, avatar_img, create_date, token, email, user_update, dob, update_date, random_key, user_create, user_id, fullname]
+2016-06-01 11:35:34 INFO  TableMetadata:68 - HHH000108: Foreign keys: []
+2016-06-01 11:35:34 INFO  TableMetadata:69 - HHH000126: Indexes: [primary, unique_email]
+2016-06-01 11:35:34 INFO  SchemaUpdate:240 - HHH000232: Schema update complete
+2016-06-01 11:35:35 INFO  PrettyFilter:333 - PrettyFilter starting up...
+2016-06-01 11:35:35 INFO  PrettyFilter:339 - PrettyFilter initialized.
+2016-06-01 11:35:49 INFO  PrettyFilter:344 - PrettyFilter shutting down...
+2016-06-02 09:47:10 INFO  Version:37 - HCANN000001: Hibernate Commons Annotations {4.0.1.Final}
+2016-06-02 09:47:10 INFO  Version:41 - HHH000412: Hibernate Core {4.0.1.Final}
+2016-06-02 09:47:10 INFO  Environment:239 - HHH000206: hibernate.properties not found
+2016-06-02 09:47:10 INFO  Environment:342 - HHH000021: Bytecode provider name : javassist
+2016-06-02 09:47:10 INFO  Configuration:1920 - HHH000043: Configuring from resource: /hibernate.cfg.xml
+2016-06-02 09:47:10 INFO  Configuration:1939 - HHH000040: Configuration resource: /hibernate.cfg.xml
+2016-06-02 09:47:11 INFO  Configuration:2061 - HHH000041: Configured SessionFactory: null
+2016-06-02 09:47:11 INFO  DriverManagerConnectionProviderImpl:90 - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2016-06-02 09:47:11 INFO  DriverManagerConnectionProviderImpl:110 - HHH000115: Hibernate connection pool size: 20
+2016-06-02 09:47:11 INFO  DriverManagerConnectionProviderImpl:113 - HHH000006: Autocommit mode: true
+2016-06-02 09:47:11 INFO  DriverManagerConnectionProviderImpl:127 - HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://118.70.177.23:3306/ite_bank?autoReconnect=true&useUnicode=true&characterEncoding=utf-8]
+2016-06-02 09:47:11 INFO  DriverManagerConnectionProviderImpl:132 - HHH000046: Connection properties: {user=root, password=****, autocommit=true}
+2016-06-02 09:47:11 INFO  Dialect:121 - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2016-06-02 09:47:11 INFO  TransactionFactoryInitiator:68 - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2016-06-02 09:47:11 INFO  ASTQueryTranslatorFactory:48 - HHH000397: Using ASTQueryTranslatorFactory
+2016-06-02 09:47:11 INFO  SchemaUpdate:182 - HHH000228: Running hbm2ddl schema update
+2016-06-02 09:47:11 INFO  SchemaUpdate:193 - HHH000102: Fetching database metadata
+2016-06-02 09:47:11 INFO  SchemaUpdate:205 - HHH000396: Updating schema
+2016-06-02 09:47:11 INFO  TableMetadata:65 - HHH000261: Table found: ite_bank.action_history
+2016-06-02 09:47:11 INFO  TableMetadata:66 - HHH000037: Columns: [action_id, create_date, action_type, actor_img, action, user_id]
+2016-06-02 09:47:11 INFO  TableMetadata:68 - HHH000108: Foreign keys: []
+2016-06-02 09:47:11 INFO  TableMetadata:69 - HHH000126: Indexes: [action_id, primary]
+2016-06-02 09:47:11 INFO  TableMetadata:65 - HHH000261: Table found: ite_bank.admin
+2016-06-02 09:47:11 INFO  TableMetadata:66 - HHH000037: Columns: [sex, del_flg, tel, country_id, password, state_id, avatar_img, create_date, email, user_update, dob, update_date, random_key, user_create, admin_id, fullname]
+2016-06-02 09:47:11 INFO  TableMetadata:68 - HHH000108: Foreign keys: []
+2016-06-02 09:47:11 INFO  TableMetadata:69 - HHH000126: Indexes: [primary, admin_id]
+2016-06-02 09:47:11 INFO  TableMetadata:65 - HHH000261: Table found: ite_bank.city
+2016-06-02 09:47:11 INFO  TableMetadata:66 - HHH000037: Columns: [id, state_id, city_name, country_id]
+2016-06-02 09:47:11 INFO  TableMetadata:68 - HHH000108: Foreign keys: []
+2016-06-02 09:47:11 INFO  TableMetadata:69 - HHH000126: Indexes: [primary]
+2016-06-02 09:47:11 INFO  TableMetadata:65 - HHH000261: Table found: ite_bank.country
+2016-06-02 09:47:11 INFO  TableMetadata:66 - HHH000037: Columns: [id, country_name]
+2016-06-02 09:47:11 INFO  TableMetadata:68 - HHH000108: Foreign keys: []
+2016-06-02 09:47:11 INFO  TableMetadata:69 - HHH000126: Indexes: [primary]
+2016-06-02 09:47:11 INFO  TableMetadata:65 - HHH000261: Table found: ite_bank.curriculum_vitae
+2016-06-02 09:47:11 INFO  TableMetadata:66 - HHH000037: Columns: [position, skill_id_1, skill_id_2, skill_id_3, skill_id_4, skill_id_5, time_start, skill_id_10, descriptions, time_end, user_id, cv_id, cv_link, job, country, level_skill_9, level_skill_7, certification, level_skill_8, level_skill_5, level_skill_6, level_skill_3, level_skill_10, level_skill_4, level_skill_1, level_skill_2, company, language, skill_id_9, skill_id_8, skill_id_7, work_time, skill_id_6]
+2016-06-02 09:47:11 INFO  TableMetadata:68 - HHH000108: Foreign keys: []
+2016-06-02 09:47:11 INFO  TableMetadata:69 - HHH000126: Indexes: [primary, cv_id]
+2016-06-02 09:47:11 INFO  TableMetadata:65 - HHH000261: Table found: ite_bank.news_post
+2016-06-02 09:47:11 INFO  TableMetadata:66 - HHH000037: Columns: [post_date_update, post_status, post_description, post_author_update, post_date_post, post_id, post_thumb, post_seo_keyword, post_content, post_comment_status, post_category_id, post_seo_description, post_type, post_comment_count, post_author_post, post_title]
+2016-06-02 09:47:11 INFO  TableMetadata:68 - HHH000108: Foreign keys: []
+2016-06-02 09:47:11 INFO  TableMetadata:69 - HHH000126: Indexes: [primary]
+2016-06-02 09:47:12 INFO  TableMetadata:65 - HHH000261: Table found: ite_bank.state
+2016-06-02 09:47:12 INFO  TableMetadata:66 - HHH000037: Columns: [id, country_id, state_name]
+2016-06-02 09:47:12 INFO  TableMetadata:68 - HHH000108: Foreign keys: []
+2016-06-02 09:47:12 INFO  TableMetadata:69 - HHH000126: Indexes: [primary]
+2016-06-02 09:47:12 INFO  TableMetadata:65 - HHH000261: Table found: ite_bank.user
+2016-06-02 09:47:12 INFO  TableMetadata:66 - HHH000037: Columns: [phone, sex, del_flg, status, country_id, tel, active_date, password, city_id, state_id, avatar_img, create_date, token, email, user_update, dob, update_date, random_key, user_create, user_id, fullname]
+2016-06-02 09:47:12 INFO  TableMetadata:68 - HHH000108: Foreign keys: []
+2016-06-02 09:47:12 INFO  TableMetadata:69 - HHH000126: Indexes: [primary, unique_email]
+2016-06-02 09:47:12 INFO  SchemaUpdate:240 - HHH000232: Schema update complete
+2016-06-02 09:47:12 INFO  PrettyFilter:333 - PrettyFilter starting up...
+2016-06-02 09:47:12 INFO  PrettyFilter:339 - PrettyFilter initialized.
+2016-06-02 09:47:24 ERROR AbstractDao:115 - checkLogin : java.lang.NumberFormatException: For input string: "abc1243"
+2016-06-02 09:48:24 INFO  PrettyFilter:344 - PrettyFilter shutting down...
+02 thg 6 2016 09:48:39,151 {http-nio-8080-exec-5} ERROR itebank.common.dao.AbstractDao  - checkLogin : java.lang.NumberFormatException: For input string: "abc1243"
+07 thg 6 2016 15:39:42,311 {http-nio-8080-exec-3} ERROR itebank.common.util.SendMailUtil  - sendEmail : com.sun.mail.smtp.SMTPSendFailedException: 452 4.3.1 Out of memory
+
+07 thg 6 2016 15:40:48,883 {http-nio-8080-exec-1} ERROR itebank.common.util.SendMailUtil  - sendEmail : com.sun.mail.smtp.SMTPSendFailedException: 452 4.3.1 Out of memory
+
+07 thg 6 2016 15:41:55,646 {http-nio-8080-exec-6} ERROR itebank.common.util.SendMailUtil  - sendEmail : com.sun.mail.smtp.SMTPSendFailedException: 452 4.3.1 Out of memory
+

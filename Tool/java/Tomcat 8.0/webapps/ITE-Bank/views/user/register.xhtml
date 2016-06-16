@@ -1,0 +1,220 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:c="http://java.sun.com/jsp/jstl/core">
+<ui:composition
+	template="/resources/user/template/master_template.xhtml">
+	<ui:define name="title">
+		Register
+	</ui:define>
+	<ui:define name="content">
+		<script>
+			$(document).ready(function() {
+				$(".datepicker").datepicker({
+					dateFormat : "dd/mm/yy"
+				});
+			});
+		</script>
+
+		<div id="wrapper" class="main-wrapper">
+			<div id="vnw-log-in" class="container">
+				<div class="col-sm-8 col-sm-push-2">
+					<div class="box box-lg">
+						<h:form id="frmRegister" enctype="multipart/form-data"
+							acceptcharset="UTF-8">
+							<div style="margin-left: 50px">
+								<div style="margin-bottom: 5px">
+									<div style="float: left; width: 30%">&nbsp;</div>
+									<div style="float: left; width: 70%" class="message">
+										<h:messages errorClass="errorClass" infoClass="infoClass"></h:messages>
+									</div>
+									<div class="clearLeft">
+										<span></span>
+									</div>
+								</div>
+							</div>
+							<div>
+								<b>#{lang['register.thong.tin.dang.nhap']}:</b> <span
+									class="required">(#{lang['register.bat.buoc']})</span>
+							</div>
+							<div style="margin-left: 50px">
+								<div style="margin-bottom: 5px">
+									<div style="float: left; width: 30%">#{lang['register.email']}</div>
+									<div style="float: left; width: 70%">
+										<h:inputText id="email" value="#{regController.user.email}"
+											required="true"
+											requiredMessage="#{lang['register.email.validate.required']}">
+											<f:validator
+												validatorId="itebank.common.validation.EmailValidator" />
+										</h:inputText>
+									</div>
+									<div class="clearLeft">
+										<span></span>
+									</div>
+								</div>
+
+								<div style="margin-bottom: 5px">
+									<div style="float: left; width: 30%">#{lang['register.password']}</div>
+									<div style="float: left; width: 70%">
+										<h:inputSecret id="password"
+											value="#{regController.user.password}" required="true"
+											requiredMessage="#{lang['register.password.validate.required']}" />
+									</div>
+									<div class="clearLeft">
+										<span></span>
+									</div>
+								</div>
+
+								<div style="margin-bottom: 5px">
+									<div style="float: left; width: 30%">#{lang['register.re.password']}</div>
+									<div style="float: left; width: 70%">
+										<h:inputSecret id="rePassword"
+											value="#{regController.rePassword}" required="true"
+											requiredMessage="#{lang['register.re.password.validate.required']}" />
+									</div>
+									<div class="clearLeft">
+										<span></span>
+									</div>
+								</div>
+							</div>
+
+							<div>
+								<b>#{lang['register.thong.tin.ca.nhan']}:</b> <span
+									class="required">(#{lang['register.bat.buoc']})</span>
+							</div>
+							<div style="margin-left: 50px">
+								<div style="margin-bottom: 5px">
+									<div style="float: left; width: 30%">#{lang['register.ho.ten']}</div>
+									<div style="float: left; width: 70%">
+										<h:inputText id="fullname"
+											value="#{regController.user.fullname}" required="true"
+											requiredMessage="#{lang['register.ho.ten.validate.required']}" />
+									</div>
+									<div class="clearLeft">
+										<span></span>
+									</div>
+								</div>
+
+								<div style="margin-bottom: 5px">
+									<div style="float: left; width: 30%">#{lang['register.ngay.sinh']}</div>
+									<div style="float: left; width: 70%">
+										<h:inputText id="dob" styleClass="datepicker"
+											value="#{regController.dateOfBirth}" required="true"
+											requiredMessage="#{lang['register.ngay.sinh.validate.required']}" />
+									</div>
+									<div class="clearLeft">
+										<span></span>
+									</div>
+								</div>
+
+								<div style="margin-bottom: 5px">
+									<div style="float: left; width: 30%">#{lang['register.gioi.tinh']}</div>
+									<div style="float: left; width: 70%">
+										<h:selectOneRadio value="#{regController.user.sex}"
+											required="true"
+											requiredMessage="#{lang['register.gioi.tinh.validate.required']}">
+											<f:selectItem itemValue="1"
+												itemLabel="#{lang['register.gioi.tinh.nam']}" />
+											<f:selectItem itemValue="0"
+												itemLabel="#{lang['register.gioi.tinh.nu']}" />
+										</h:selectOneRadio>
+									</div>
+									<div class="clearLeft">
+										<span></span>
+									</div>
+								</div>
+
+								<div style="margin-bottom: 5px">
+									<div style="float: left; width: 30%">#{lang['register.quoc.gia']}</div>
+									<div style="float: left; width: 70%">
+										<h:selectOneMenu value="#{regController.user.countryId}"
+											id="countryId" required="true"
+											requiredMessage="#{lang['register.quoc.gia.validate.required']}">
+											<f:selectItem itemLabel="#{lang['register.quoc.gia']}"
+												itemValue="" />
+											<f:selectItems value="#{regController.listCountry}"
+												var="country" itemLabel="#{country.countryName}"
+												itemValue="#{country.id}" />
+											<f:ajax execute="countryId" render="cityId"
+												listener="#{regController.changeCity()}"></f:ajax>
+										</h:selectOneMenu>
+									</div>
+									<div class="clearLeft">
+										<span></span>
+									</div>
+								</div>
+
+								<div style="margin-bottom: 5px">
+									<div style="float: left; width: 30%">#{lang['register.tinh.thanh']}</div>
+									<div style="float: left; width: 70%">
+										<h:selectOneMenu value="#{regController.user.cityId}"
+											id="cityId" required="true"
+											requiredMessage="#{lang['register.tinh.thanh.validate.required']}">
+											<f:selectItem itemLabel="#{lang['register.tinh.thanh']}"
+												itemValue="" />
+											<f:selectItems value="#{regController.listCity}" var="city"
+												itemLabel="#{city.cityName}" itemValue="#{city.id}" />
+										</h:selectOneMenu>
+									</div>
+									<div class="clearLeft">
+										<span></span>
+									</div>
+								</div>
+							</div>
+
+							<div>
+								<b>#{lang['register.thong.tin.khac']}:</b> <span
+									class="required">(#{lang['register.khong.bat.buoc']})</span>
+							</div>
+							<div style="margin-left: 50px">
+								<div style="margin-bottom: 5px">
+									<div style="float: left; width: 30%">#{lang['register.anh.dai.dien']}</div>
+									<div style="float: left; width: 70%">
+										<h:inputFile id="avatar" value="#{regController.avatar}"
+											validator="#{regController.validateFile}">
+										</h:inputFile>
+									</div>
+									<div class="clearLeft">
+										<span></span>
+									</div>
+								</div>
+							</div>
+							<div style="margin-left: 50px">
+								<div style="margin-bottom: 5px">
+									<div style="float: left; width: 30%">#{lang['register.dien.thoai']}</div>
+									<div style="float: left; width: 70%">
+										<h:inputText id="tel" value="#{regController.user.tel}">
+											<f:validator
+												validatorId="itebank.common.validation.MobileValidator" />
+										</h:inputText>
+									</div>
+									<div class="clearLeft">
+										<span></span>
+									</div>
+								</div>
+							</div>
+
+							<div>
+								<div style="margin-left: 50px">
+									<div style="float: left; width: 30%">&nbsp;</div>
+									<div style="float: left; width: 70%">
+										<h:commandButton id="btnRegister"
+											value="#{lang['register.dang.ky']}"
+											actionListener="#{regController.register}" />
+									</div>
+									<div class="clearLeft">
+										<span></span>
+									</div>
+								</div>
+							</div>
+						</h:form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</ui:define>
+</ui:composition>
+</html>

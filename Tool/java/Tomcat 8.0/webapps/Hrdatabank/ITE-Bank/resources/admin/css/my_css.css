@@ -1,0 +1,31 @@
+@charset "UTF-8";
+
+.header {
+	/* border: solid 1px gray; */
+}
+
+.footer {
+	/* border: solid 1px gray; */
+}
+
+.content {
+	background-color: #fff;
+	/* border: solid 1px gray; */
+}
+
+.error {
+	color: red;
+}
+
+.clearLeft {
+	clear: left;
+}
+
+.clearRight {
+	clear: right;
+}
+
+.clearBoth {
+	clear: both;
+}
+

@@ -1,0 +1,54 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
+	xmlns:f="http://xmlns.jcp.org/jsf/core">
+<ui:composition>
+	<!-- Jquery -->
+<!-- 	<script type="text/javascript" -->
+<!-- 		src="#{request.contextPath}/resources/admin/js/jquery-1.10.2.min.js"></script> -->
+
+	<!-- Bootstrap Core Js -->
+	<script type="text/javascript"
+		src="#{request.contextPath}/resources/admin/js/bootstrap.min.js"></script>
+
+	<!-- Metis Menu Plugin Js -->
+	<script type="text/javascript"
+		src="#{request.contextPath}/resources/admin/js/metisMenu.min.js"></script>
+
+	<!-- DataTables Js -->
+	<script type="text/javascript"
+		src="#{request.contextPath}/resources/admin/js/jquery.dataTables.min.js"></script>
+	<script type="text/javascript"
+		src="#{request.contextPath}/resources/admin/js/dataTables.bootstrap.min.js"></script>
+	
+	<!-- Sb Admin Js -->
+	<script type="text/javascript"
+		src="#{request.contextPath}/resources/admin/js/sb-admin-2.js"></script>
+
+	
+	<h:outputScript library="javax.faces" name="jsf.js" />
+	<script type="text/javascript">
+		jsf.ajax.addOnEvent(function(data) {
+			var ajaxstatus = data.status; // Can be "begin", "complete" and "success"
+			var ajaxloader = document.getElementById("ajaxloader");
+
+			switch (ajaxstatus) {
+			case "begin": // This is called right before ajax request is been sent.
+				ajaxloader.style.display = 'block';
+				break;
+
+			case "complete": // This is called right after ajax response is received.
+				ajaxloader.style.display = 'none';
+				break;
+
+			case "success": // This is called when ajax response is successfully processed.
+				// NOOP.
+				break;
+			}
+		});
+	</script>
+</ui:composition>
+</html>

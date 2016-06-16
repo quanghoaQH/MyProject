@@ -1,0 +1,94 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
+	xmlns:f="http://xmlns.jcp.org/jsf/core">
+<ui:composition>
+	<div class="container">
+		<!-- World Cup Doodle -->
+		<!--End World Cup Doodle -->
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle" data-toggle="collapse"
+				data-target=".navbar-collapse">
+				<span class="menu-toggle sm relative"> </span>
+			</button>
+			<a class="navbar-brand" href="#{request.contextPath}/"> <img
+				src="#"
+				alt="ITE-Bank.com – Mạng việc làm, tuyển dụng hàng đầu Việt Nam"
+				title="ITE-Bank.com – Mạng việc làm, tuyển dụng hàng đầu Việt Nam"
+				class="vnw-logo img-responsive" /></a>
+		</div>
+		<div class="navbar-collapse collapse">
+			<div class="ud-top-link hidden-xs">
+				<div class="language pull-right">
+					<span class="link-list create-jobalerts"><i
+						class="fa fa-lg fa-envelope fa-fw"></i> <a
+						href="#{request.contextPath}/tao-thong-bao-viec-lam"
+						title="Tạo Thông Báo Việc Làm">Gửi Việc Cho Tôi</a> </span> <span
+						class="push-left-15"> <i class="fa fa-globe fa-lg fa-fw"></i>
+						<a href="javascript: changLanguage(2);" title="English - ITE-Bank">English</a>
+					</span> <span class="push-left-15 employer-site"><strong>Bạn
+							tìm người tài? </strong> <a class=""
+						href="http://employer.ITE-Bank.com/?lang=1"
+						title="Trang dành cho nhà tuyển dụng"><strong>Cho nhà
+								tuyển dụng</strong></a> </span>
+				</div>
+			</div>
+			<div class="main-menu clearfix">
+				<ul class="nav navbar-nav navbar-right">
+					<c:if test="#{sessionScope.user != null}">
+						<li>#{lang['label.welcome']}: #{sessionScope.user.fullname}</li>
+					</c:if>
+					<c:if test="#{sessionScope.user == null}">
+						<li><a href="#{request.contextPath}/login">Đăng Nhập</a></li>
+						<li><a href="#{request.contextPath}/register">Đăng Ký</a></li>
+						<li class="dropdown"><a href="#"
+							class="dropdown-toggle hidden-xs" data-toggle="dropdown"
+							data-hover="dropdown"> <span class="menu-toggle relative">
+							</span>
+						</a>
+							<ul class="dropdown-menu dropdown-menu-lg" role="menu">
+								<li class="dropdown-info"><a
+									href="#{request.contextPath}/login">Đăng Nhập</a> hay <a
+									href="#{request.contextPath}/register">Đăng Ký</a> để truy cập
+									tài khoản</li>
+								<li class="divider"></li>
+								<li role="presentation" class="dropdown-header">
+									<!-- user login --> Quản Lý Nghề Nghiệp
+								</li>
+
+								<li class="disabled"><a href="#"><i
+										class="fa fa-pencil fa-fw disabled"></i> Tạo Hồ Sơ</a></li>
+
+
+								<li class="disabled"><a href="#"><i
+										class="fa fa-file fa-fw disabled"></i> Hồ Sơ Của Tôi</a></li>
+
+
+								<li class="disabled"><a href="#"><i
+										class="fa fa-star fa-fw disabled"></i> Việc Làm Của Tôi</a></li>
+
+
+								<li class="disabled"><a href="#"><i
+										class="fa fa-bell fa-fw disabled"></i> Thông Báo Việc Làm</a></li>
+
+
+								<li class="disabled"><a href="#"><i
+										class="fa fa-comment fa-fw disabled"></i> Phản Hồi</a></li>
+
+
+								<li class="disabled"><a href="#"><i
+										class="fa fa-user fa-fw disabled"></i> Nhà Tuyển Dụng Xem Hồ
+										Sơ</a></li>
+
+							</ul></li>
+					</c:if>
+				</ul>
+			</div>
+			<!-- /navbar-collapse -->
+		</div>
+	</div>
+</ui:composition>
+</html>

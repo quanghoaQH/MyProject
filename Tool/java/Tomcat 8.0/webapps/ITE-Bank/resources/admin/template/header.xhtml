@@ -1,0 +1,84 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
+	xmlns:f="http://xmlns.jcp.org/jsf/core">
+	<ui:composition>
+		 <!-- Navigation -->
+		<nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<h:outputLink value="#{request.contextPath}/views/dashboard.xhtml" 
+					styleClass="navbar-brand">ITE-Bank</h:outputLink>
+			</div>
+			<!-- /.navbar-header -->
+			
+			<ul class="nav navbar-top-links navbar-right">
+				 <li class="dropdown">
+					<a class="dropdown-toggle" data-toggle="dropdown" href="#">
+						<i class="fa fa-user fa-fw"></i>  <i class="fa fa-caret-down"></i>
+					</a>
+					<ul class="dropdown-menu dropdown-user">
+						<li><a href="#"><i class="fa fa-user fa-fw"></i> User Profile</a>
+						</li>
+						<li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
+						</li>
+						<li class="divider"></li>
+						<li><a href="#"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+						</li>
+					</ul>
+				<!-- /.dropdown-user -->
+				</li>
+			</ul>
+			<!-- /.navbar-top-links -->
+			
+			<!-- Sidebar -->
+			<div class="navbar-default sidebar" role="navigation">
+				<div class="sidebar-nav navbar-collapse">
+					<!-- Sidebar Menu -->
+					<ul class="nav" id="side-menu">
+						<!-- Search -->
+						<li class="sidebar-search">
+							<div class="input-group custom-search-form">
+								<input type="text" class="form-control" placeholder="Search..."/>
+								<span class="input-group-btn">
+									<button class="btn btn-default" type="button">
+										<i class="fa fa-search"></i>
+									</button>
+								</span>
+							</div>
+							<!-- /input-group -->
+						</li>
+						
+						<!-- DashBoard -->
+						<li>
+							<h:outputLink value="#{request.contextPath}/views/dashboard.xhtml" >
+								<i class="fa fa-dashboard fa-fw"></i>Dashboard
+							</h:outputLink>
+						</li>
+						
+						<!-- User -->
+						<li>
+							<h:outputLink value="#{request.contextPath}/views/user/list.xhtml" >
+								<i class="fa fa-user fa-fw"></i>User Manage
+							</h:outputLink>
+						</li>
+						<!-- News -->
+						<li>
+							<h:outputLink value="#{request.contextPath}/views/admin/news_post.xhtml" >
+								<i class="fa fa-edit fa-fw"></i>News Manage
+							</h:outputLink>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+	</ui:composition>
+</html>

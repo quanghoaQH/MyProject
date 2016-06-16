@@ -1,0 +1,177 @@
+@CHARSET "UTF-8";
+body{
+	font-family: Open Sans;
+	background-color: #E6F7FB; 
+}
+a:hover,
+a{
+	text-decoration: none;
+}
+.home{
+	color: #fff !important;
+	font-size: 25px;
+}
+header{
+
+	margin-bottom: 0px !important;
+}
+.logo{
+	padding:10px 0px;
+}
+.navbar-default{
+	margin-bottom: 0px !important;
+	border-radius: 0;
+	background-color: #00ADEF;
+	border:none;
+}
+.navbar-default .navbar-nav > li > a {
+	color: #fff;
+
+}
+.carousel-control:hover, .carousel-control:focus {
+	background-color: none !important;
+}
+.carousel-control.left,
+.carousel-control.right{
+	background: none;
+}
+ hr{
+	border-bottom: thin solid #00ADEF;
+	clear: both;
+}
+li{
+	list-style-type: none;
+}
+.footer{
+	padding:20px;
+	margin-bottom: 30px;
+}
+.titleTour{
+	text-align: center;
+	font-size: 25px;
+	background-color: #108FB2;
+	color: #fff;
+}
+.btnDetail{
+	margin: 0 20%;
+}
+.titleDetail{
+	text-align: center;
+}
+.youtube{
+	margin: 0 30px;
+}
+.search{
+	padding: 30px 0px;
+
+}
+
+.menuleft{
+	padding-bottom: 20px;
+}
+.tieudelienlac{
+	background-color: #00ADEF;
+	font-family: Open Sans;
+	text-align: center;
+	width: 100%;
+	font-size: 25px;
+	color: #fff;
+	padding: 2px 0;
+	margin: 20px 0;
+}
+.tieude{
+	width: 100%;
+	background-color: #00ADEF;
+	color: #fff;
+	font-family: Open Sans;
+	text-align: center;
+	border: none;
+	border-top-right-radius:5px;
+	border-top-left-radius:5px;
+	font-size: 25px;
+}
+
+.tentour{
+	width: 100%;
+	background-color: #00ADEF;
+	color: #fff;
+	font-family: Open Sans;
+	text-align:left;
+	border: none;
+	border-top-right-radius:5px;
+	border-top-left-radius:5px;
+	font-size: 25px;
+}
+.content{
+	padding-top: 20px
+}
+.menuleft ul{
+}
+.tourlienquan{
+	padding-top: 10px;
+	padding-bottom: 10px;
+	float: left;
+	font-size: 11px;
+	border: solid 1px #EEEEEE;
+	border-radius: 5px;
+}
+.tourlienquanimg{
+	width: 35%;
+	float: left;
+}
+.tourgiamgia{
+	width: 100%;
+	background-color: #00ADEF;
+	color: #fff;
+	font-family: Open Sans;
+	text-align: center;
+	border: none;
+	border-top-right-radius:5px;
+	border-top-left-radius:5px;
+	font-size: 25px
+}
+.clearboth{
+	clear: both;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+.mieuta{
+	border: solid 1px #EEEEEE;
+	margin-top: 10px;
+	padding:10px;
+	font-size: 15px;
+
+}
+.lichtrinh{
+	border: solid 1px #EEEEEE;
+	margin-top: 10px;
+	padding:10px;
+	font-size: 15px;
+
+}
+
+.chinhsach{
+	border: solid 1px #EEEEEE;
+	margin-top: 10px;
+	padding:10px;
+	font-size: 15px;
+}
+.tourDetail h4{
+	color: #00ADEF;
+}
+.tourDetail h5{
+	padding-left: 40px;
+}
+.address{
+	margin-bottom:10px;
+	line-height: 10px;
+}
+.tenkhachsan{
+	font-size: 25px;
+	margin: 10px 0;
+	color: #5578A5;
+}
+a{
+	cursor: pointer;
+}
+
